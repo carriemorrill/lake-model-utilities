@@ -2,11 +2,13 @@
 This procedure is useful for calibrating the lake model across a range of possible parameter values, or for generating an ensemble of lake model simulations to sample the impact of parameter uncertainty.
 1. Generate scaling factors for parameters using Latin Hypercube sampling in R. To do this in R, use the following commands:
 
-   install.packages("lhs")
+   > install.packages("lhs")
    
-   library(lhs)
+   > library(lhs)
    
-   improvedLHS(1000,7)
+   > improvedLHS(1000,7)
+   
+   Save output as lake-params.txt
    
    Documentation for the function improvedLHS is at: https://www.rdocumentation.org/packages/lhs/versions/1.0.1/topics/improvedLHS
 
