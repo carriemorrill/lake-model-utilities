@@ -22,4 +22,4 @@ This procedure is useful for calibrating the lake model across a range of possib
 
 4. Run bash script using the following command:
 
-    ./runLakeModel.sh
+    > ./runLakeModel.sh
