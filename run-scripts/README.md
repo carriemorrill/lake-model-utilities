@@ -18,8 +18,10 @@ This procedure is useful for calibrating the lake model across a range of possib
 
 2. Specify ranges of parameter values in the fortran program writeParameter.f. The Latin Hypercube sampling generates values in the range 0 to 1. This fortran program will be called by the shell script to apply these scalings to parameter ranges and then write out parameter values to be concatenated to the lake.inc file.
 
-3. Edit shell script runLakeModel.sh as necessary. The main edits needed will be to match the number of loop iterations to the number of sets of parameters (= first argument of improvedLHS = number of rows in the Latin Hypercube sampling) and to specify the directory to which lake model output files should be moved.
+3. Edit shell script (Unix: runLakeModel.sh, Windows Powershell: runLakeModel.ps1) as necessary. The main edits needed will be to match the number of loop iterations to the number of sets of parameters (= first argument of improvedLHS = number of rows in the Latin Hypercube sampling) and to specify the directory to which lake model output files should be moved.
 
 4. Run bash script using the following command:
 
     > ./runLakeModel.sh
+    OR
+    > ./runLakeModel.ps1
