@@ -4,7 +4,7 @@
 gfortran -o parameter writeParameter.f90
 
 $j=1
-while($j -le 1){
+while($j -le 1000){
    Set-Content .\row.txt "$j"
    ./parameter.exe
    Get-Content lake.inc.save,fort.23 | Set-Content lake.inc
