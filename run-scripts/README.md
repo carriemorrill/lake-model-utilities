@@ -20,8 +20,7 @@ This procedure is useful for calibrating the lake model across a range of possib
 
 3. Edit shell script (Unix: runLakeModel.sh, Windows Powershell: runLakeModel.ps1) as necessary. The main edits needed will be to match the number of loop iterations to the number of sets of parameters (= first argument of improvedLHS = number of rows in the Latin Hypercube sampling) and to specify the directory to which lake model output files should be moved.
 
-4. Run bash script using the following command:
+4. Run script using one of the following commands:
 
     > ./runLakeModel.sh
-    OR
     > ./runLakeModel.ps1
