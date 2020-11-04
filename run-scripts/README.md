@@ -1,12 +1,14 @@
 # Running multiple iterations of Lake Model using shell scripting
 This procedure is useful for calibrating the lake model across a range of possible parameter values, or for generating an ensemble of lake model simulations to sample the impact of parameter uncertainty.
-1. Generate scaling factors for parameters using Latin Hypercube sampling in R. To do this in R, use the following commands:
+1. Generate scaling factors for parameters using Latin Hypercube sampling in R. To do this in R, use the following commands. Set nsim and nparam to be the number of lake model simulations you plan to run and the number of parameters that you plan to vary.
 
    > install.packages("lhs")
    
    > library(lhs)
    
-   > improvedLHS(1000,7)
+   > nsim = 1000; nparam = 7
+   
+   > improvedLHS(nsim,nparam)
    
    Save output as lake-params.txt
    
