@@ -35,7 +35,7 @@ This procedure is useful for calibrating the lake model across a range of possib
    
  Second, edit the fortran compiler and the name of the lake model version you are running. 
  
- > gfortran -o lake HB-windy-sed-varD2.f90
+   > gfortran -o lake HB-windy-sed-varD2.f90
 
 5. Run script using the appropriate command:
 
