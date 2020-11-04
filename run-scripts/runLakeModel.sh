@@ -13,6 +13,6 @@ do
    cat lake.inc.save fort.23 > lake.inc
    f95 -o lake env_sub.f90
    ./lake.exe
-   mv surface.dat OUTPUT/surface-"$j".txt
+   mv surface.dat surface-"$j".txt
    ((j++)) 
 done
