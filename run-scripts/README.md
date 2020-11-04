@@ -1,7 +1,7 @@
 # Running multiple iterations of Lake Model using shell scripting
 This procedure is useful for calibrating the lake model across a range of possible parameter values, or for generating an ensemble of lake model simulations to sample the impact of parameter uncertainty.
 
-1. In lake.inc, comment out the statements for parameters that you wish to vary. For example, if you want to test different values for eta, the parameter statement should look like:
+1. In lake.inc, comment out the statements for parameters that you wish to vary. Save the new lake.inc file as lake.inc.save. For example, if you want to test different values for eta, the parameter statement should look like:
 
    > !      parameter (eta = 0.2) 
 
@@ -25,7 +25,15 @@ This procedure is useful for calibrating the lake model across a range of possib
 
 3. Edit the fortran program writeParameter.f to match the parameters you wish to vary and their possible ranges of values. The Latin Hypercube sampling generates values in the range 0 to 1. This fortran program will be called by the shell script to apply these scalings to parameter ranges and then write out parameter values to be concatenated to the lake.inc file.
 
-4. Edit shell script (Unix: runLakeModel.sh, Windows Powershell: runLakeModel.ps1) as necessary. The main edit needed will be to match the number of loop iterations to the number of sets of parameters (= first argument of improvedLHS).
+4. Edit shell script (Unix: runLakeModel.sh, Windows Powershell: runLakeModel.ps1). First, match the number of loop iterations to the number of sets of parameters (= first argument of improvedLHS). For example, when using nsim = 1000, for Unix and Powershell, respectively:
+
+    > while [$j -le 1000]
+
+    > while($j -le 1000)
+   
+ Second, edit the fortran compiler and the name of the lake model version you are running. 
+ 
+    > gfortran -o lake HB-windy-sed-varD2.f90
 
 5. Run script using the appropriate command:
 
