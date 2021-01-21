@@ -1,15 +1,22 @@
 #Powershell script
 #=================================================================
 
+cd Parameter-files
 gfortran -o parameter writeParameter.f90
+cd ..
 
 $j=1
-while($j -le 1000){
+while($j -le 2){
+   cd Parameter-files
    Set-Content .\row.txt "$j"
    ./parameter.exe
    Get-Content lake.inc.save,fort.23 | Set-Content lake.inc
-   gfortran -o lake HB-windy-sed-varD2.f90
+   mv lake.inc ..
+   cd ..
+   gfortran -c *.f90
+   gfortran -o lake *.o
    ./lake.exe
    mv surface.dat surface-"$j".txt
+   rm lake.inc
    $j++
 }   
