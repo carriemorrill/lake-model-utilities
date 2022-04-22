@@ -10,7 +10,7 @@ You will need:
 Steps: 
 1. In a system shell (e.g., Windows Powershell, NOT in a python shell) and in the directory that contains bartlein_sub.f90, run the following replacing "mingw32" with the name of your fortan compiler:
     > f2py -c -m bartlein_calendar bartlein_sub.f90 -- compiler=mingw32   
-2. Check that a python extension module called "bartlein_calendar" was created. If so, you are ready to go to your python environment and run the calendar correction.
+2. Check that a python extension module called "bartlein_calendar" was created. If so, you are ready to go to your python environment and run the calendar correction. Once the module is created, steps #1 and #2 do not need to be completed again.
 3. In python, run the calendar correction code by first importing the module you just made:
     > import bartlein_calendar  
 4. Then call the cal_adjust_pmip function in your python code, for example as in spatialCC.py:
